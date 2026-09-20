@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task Manager</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+<main class="app">
+  <h1>Task Manager</h1>
+  <p class="subtitle">Add tasks, tick them off, and they'll still be here when you come back.</p>
+
+  <form id="taskForm" class="add-form" novalidate>
+    <label for="taskInput" class="visually-hidden">New task</label>
+    <input type="text" id="taskInput" placeholder="What needs to be done?" maxlength="120" autocomplete="off" />
+    <button type="submit" class="btn btn-primary">Add task</button>
+  </form>
+  <p id="formError" class="form-error" role="alert"></p>
+
+  <div class="filters" role="group" aria-label="Filter tasks">
+    <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter" data-filter="active" aria-pressed="false">Active</button>
+    <button class="filter" data-filter="done" aria-pressed="false">Done</button>
+  </div>
+
+  <ul id="taskList" class="task-list"></ul>
+  <p id="emptyMessage" class="empty" hidden></p>
+
+  <div class="footer-bar">
+    <span id="counter">0 tasks left</span>
+    <button id="clearDone" class="btn-link">Clear completed</button>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
